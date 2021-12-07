@@ -9,3 +9,6 @@ NAME = 'CLICKER'
 #Ressources
 LOGO = "logo_NS.png"
 ICONE = "piaf2.png"
+BTN = "Btn"
+
+EXT = ".png"
