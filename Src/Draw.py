@@ -59,6 +59,11 @@ def drawRect(screen, *arg):
 def creerFont():
     return pg.font.SysFont("Comic Sans MS", 30)
 
+#retourne la taille d'une image
+#comment récup une valeur Draw.imgSize(image)[0] ou Draw.imgSize(image)[1] pour la hauteur
+def imgSize(img):
+    return img.get_size()
+
 ########################################################################
 ########## KEYBOAD #####################################################
 
@@ -81,3 +86,11 @@ def quit():
 def escapeKey():
     event = getEvent()
     return event[pg.K_ESCAPE]
+
+#renvoi vrai si la souris clique
+def mouseClicked():
+    return pg.mouse.get_pressed()
+
+#retourne la position de la souris dans la fenetre
+def mousePos():
+    return pg.mouse.get_pos()
