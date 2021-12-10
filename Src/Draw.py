@@ -87,9 +87,9 @@ def escapeKey():
     event = getEvent()
     return event[pg.K_ESCAPE]
 
-#renvoi vrai si la souris clique
+#renvoi vrai si la souris clique (clique gauche)
 def mouseClicked():
-    return pg.mouse.get_pressed()
+    return pg.mouse.get_pressed(3)[0]
 
 #retourne la position de la souris dans la fenetre
 def mousePos():

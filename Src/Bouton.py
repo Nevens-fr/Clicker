@@ -11,9 +11,23 @@ class Bouton(Affichable.affichable):
         self.imgC = Draw.createImg(path + "C" + commun.EXT)         #bouton cliqué
         self.imgH = Draw.createImg(path + "H" + commun.EXT)         #bouton hover
 
-    #Affichage
-    def afficher(self, screen):
-        Draw.drawBlit(screen, self)
+        #recupère les dimensions de l'image
+        self.w = Draw.imgSize(self.img)[0]
+        self.h = Draw.imgSize(self.img)[1]
+
+    #Renvoie vrai si la position passée en paramètre est dans l'image
+    def isClicked(self, position):
+        w = position[0]
+        h = position[1]
+        print(position)
+        ret = None
+
+        if w >= self.coords[0] and w <= self.w:
+            if h >= self.coords[1] and h <= self.h:
+                ret = True
+        ret= False
+        print(ret)
+        return ret
 
     #Change l'image affichée car souris au dessus img
     def setImgH(self):

@@ -16,3 +16,7 @@ class affichable:
 
     def getCoords(self):
         return self.coords
+
+    #Affichage de l'objet
+    def afficher(self,screen):
+        Draw.drawBlit(screen, self)
