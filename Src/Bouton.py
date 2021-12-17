@@ -16,17 +16,14 @@ class Bouton(Affichable.affichable):
         self.h = Draw.imgSize(self.img)[1]
 
     #Renvoie vrai si la position passée en paramètre est dans l'image
-    def isClicked(self, position):
+    def isHover(self, position):
         w = position[0]
         h = position[1]
-        print(position)
-        ret = None
+        ret = False
 
-        if w >= self.coords[0] and w <= self.w:
-            if h >= self.coords[1] and h <= self.h:
+        if w >= self.coords[0] and w <= self.w + self.coords[0]:
+            if h >= self.coords[1] and h <= self.h+self.coords[1]:
                 ret = True
-        ret= False
-        print(ret)
         return ret
 
     #Change l'image affichée car souris au dessus img
