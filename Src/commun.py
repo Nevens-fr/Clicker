@@ -15,10 +15,10 @@ LOGO = "logo_NS.png"
 ICONE = "cookie.png"
 FOND = "fond.png"
 
-NB = 0
-COOKIE_CLICK_NB = 1 #nombre de cookie généré par un click
+SAVE = "save.txt"
 
-TXT_NB_COOKIES = None
+POINTS = None
+COOKIE_CLICK_NB = 1 #nombre de cookie généré par un click
 
 #boutons
 EXT = ".png"
@@ -42,3 +42,7 @@ BTN_UPGRADE.append((WIDTH * 0.55, HEIGHT * 0.24))
 BTN_UPGRADE.append((WIDTH * 0.55, HEIGHT * 0.43))
 BTN_UPGRADE.append((WIDTH * 0.55, HEIGHT * 0.63))
 BTN_UPGRADE.append((WIDTH * 0.55, HEIGHT * 0.83))
+
+##
+#Grandeurs
+GRANDEURS = ["", "milliers", "millions", "milliards", "trilliards", "a"]

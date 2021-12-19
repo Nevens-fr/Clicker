@@ -4,22 +4,25 @@ import Affichable
 import Bouton
 import Click
 import Texte
+import Fonctions
+import Points
 
 #Ecran de jeu
 def jeu(screen):
-    btns = createButtonUpgrade()
-    btns.append(Bouton.Bouton(commun.COOKIE_COORD, commun.BTNPATH + commun.COOKIE, addPt))
+    btns = Fonctions.createButtonUpgrade()
+    btns.append(Bouton.Bouton(commun.COOKIE_COORD, commun.BTNPATH + commun.COOKIE, Fonctions.addPt))
 
     arrierePlan = Affichable.affichable(commun.FOND_COORDS, commun.PATH+ commun.FOND)
     font = Draw.creerFont()
-    nb = 0
     click = Click.Click()
-    commun.TXT_NB_COOKIES = Texte.Texte(commun.NB_COOKIES_COORDS, str(commun.NB), font, commun.BLACK)
+
+    commun.POINTS = Points.Points(font)
 
     while True:
         click.update()
         Draw.clearScreen(screen)
         arrierePlan.afficher(screen)
+        commun.POINTS.afficher(screen)
 
         for elem in btns:
             elem.afficher(screen)
@@ -27,21 +30,5 @@ def jeu(screen):
                 elem.appliqueMethode()
                 click.removeClick()
 
-        commun.TXT_NB_COOKIES.afficher(screen)
         Draw.drawScreenUpdate()
         Draw.quit()
-
-##
-#Créée et retourne la liste des boutons à afficher sur la page
-def createButtonUpgrade():
-    btns = []
-    for elem in commun.BTN_UPGRADE:
-        btns.append(Bouton.Bouton(elem, commun.BTNPATH + commun.BUTTONBAR, None))
-
-    return btns
-
-##
-#ajoute des points au compteurs et met à jour l'affichage
-def addPt(self):
-    commun.NB += commun.COOKIE_CLICK_NB
-    commun.TXT_NB_COOKIES.setImg(str(commun.NB))
