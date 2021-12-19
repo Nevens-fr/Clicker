@@ -3,9 +3,9 @@ import commun
 import Affichable
 import Bouton
 import Click
-import Texte
 import Fonctions
 import Points
+import sys
 
 #Ecran de jeu
 def jeu(screen):
@@ -25,10 +25,16 @@ def jeu(screen):
         commun.POINTS.afficher(screen)
 
         for elem in btns:
-            elem.afficher(screen)
+            try:
+                elem.afficher(screen, font)
+            except:#exception pour gérer l'affichage du bouton cookie
+                elem.afficher(screen)
+
             if(click.isClicked() and elem.isHover(Draw.mousePos())):
                 elem.appliqueMethode()
                 click.removeClick()
 
         Draw.drawScreenUpdate()
-        Draw.quit()
+        if Draw.quitter():
+            commun.POINTS.saveScore(btns)
+            sys.exit()

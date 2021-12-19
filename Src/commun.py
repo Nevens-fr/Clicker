@@ -19,6 +19,24 @@ SAVE = "save.txt"
 
 POINTS = None
 COOKIE_CLICK_NB = 1 #nombre de cookie généré par un click
+COOKIE_CLICK_NB_ORD_GRAND = 0
+
+UPGRADE = [
+    [0,1],
+    [0,2],
+    [1,3],
+    [2,1]
+]
+
+TXT_UPGRADE = [
+    "Faits par la grand-maman",
+    "Extorsion aux maternelles",
+    "Usine locale",
+    "Poids lourd de l'industrie"
+]
+
+COEF_UPGRADE = 0.1
+
 
 #boutons
 EXT = ".png"

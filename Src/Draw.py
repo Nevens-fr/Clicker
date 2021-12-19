@@ -82,6 +82,12 @@ def quit():
         if events.type == pg.QUIT:
             sys.exit()
 
+#Renvoie vrai si la croix a été utilisée pour quitter la fenetre
+def quitter():
+    for events in pg.event.get():
+        if events.type == pg.QUIT:
+            return True
+
 #renvoie vrai si la touche echap est utilisée
 def escapeKey():
     event = getEvent()
