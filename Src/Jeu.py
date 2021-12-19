@@ -8,22 +8,22 @@ import Texte
 #Ecran de jeu
 def jeu(screen):
 
-    cookie = Bouton.Bouton((commun.WIDTH / 2, commun.HEIGHT / 2), commun.BTNPATH + "cookie")
+    cookie = Bouton.Bouton((commun.WIDTH * 0.21, commun.HEIGHT * 0.48), commun.BTNPATH + commun.COOKIE)
+    arrierePlan = Affichable.affichable((0,0), commun.PATH+ commun.FOND)
     font = Draw.creerFont()
     nb = 0
     click = Click.Click()
-    txt = Texte.Texte((0,0), str(nb), font, (255,255,255))
+    txt = Texte.Texte((50,10), str(nb), font, (0,0,0))
 
     while True:
         click.update()
         Draw.clearScreen(screen)
+        arrierePlan.afficher(screen)
         txt.afficher(screen)
         cookie.afficher(screen)
         Draw.drawScreenUpdate()
         Draw.quit()
 
         if(click.isClicked() and cookie.isHover(Draw.mousePos())):
-            cookie.setImgC()
             nb += 1
-            print(nb)
             txt.setImg(str(nb))

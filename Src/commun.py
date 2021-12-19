@@ -5,14 +5,18 @@ BTNPATH = PATH +"Boutons/"
 
 ###
 #Caractéristiques fenetre
-WIDTH = 1000
-HEIGHT = 600
+WIDTH = 850
+HEIGHT = 502
 NAME = 'CLICKER'
 
 ###
 #Ressources
 LOGO = "logo_NS.png"
-ICONE = "piaf2.png"
+ICONE = "cookie.png"
+FOND = "fond.png"
 
 #boutons
 EXT = ".png"
+
+COOKIE = "cookie"
+BUTTONBAR = "ButtonBar"
