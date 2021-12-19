@@ -2,17 +2,31 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="210mm"
    height="297mm"
    viewBox="0 0 210 297"
    version="1.1"
    id="svg7577"
-   inkscape:version="1.1.1 (1:1.1+202109281944+c3084ef5ed)"
-   sodipodi:docname="ButtonBar.svg"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="ButtonBar.svg">
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
   <sodipodi:namedview
      id="namedview7579"
      pagecolor="#505050"
@@ -23,13 +37,13 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.46947952"
-     inkscape:cx="396.18342"
-     inkscape:cy="561.25984"
-     inkscape:window-width="1366"
-     inkscape:window-height="708"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:zoom="1.5954968"
+     inkscape:cx="281.79899"
+     inkscape:cy="686.61264"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
@@ -39,15 +53,15 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#008080;stroke-width:0.264583;fill-opacity:1"
+       style="fill:#666666;fill-opacity:1;stroke-width:0.21780771"
        id="rect7660"
        width="139.11641"
-       height="42.702488"
+       height="28.938488"
        x="9.3867121"
        y="89.183121"
-       ry="9.65798"
-       inkscape:export-filename="/home/aurelien/Desktop/Clicker/Assets/Boutons/ButtonBarNC.png"
-       inkscape:export-xdpi="27.387135"
-       inkscape:export-ydpi="27.387135" />
+       ry="6.5449896"
+       inkscape:export-filename="D:\bureau\Clicker\Assets\Boutons\ButtonBarNC.png"
+       inkscape:export-xdpi="63.903316"
+       inkscape:export-ydpi="63.903316" />
   </g>
 </svg>

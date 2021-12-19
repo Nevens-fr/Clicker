@@ -18,8 +18,11 @@ class Click:
     #renvoi vrai si un click est en mémoire
     def isClicked(self):
         if self.click == 1:
-            self.click = 0
             return True
         else:
             return False
+    
+    #Supprime le click
+    def removeClick(self):
+        self.click = 0
     

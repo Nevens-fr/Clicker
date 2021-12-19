@@ -1,7 +1,6 @@
 import Draw
 import Affichable
 import commun
-import Bouton
 import Jeu
 
 screen = Draw.create_window(commun.WIDTH, commun.HEIGHT, commun.NAME, Draw.createImg(commun.PATH + commun.ICONE))

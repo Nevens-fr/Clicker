@@ -5,7 +5,7 @@ import commun
 class Bouton(Affichable.affichable):
 
     #Constructeur
-    def __init__(self, coords, path):
+    def __init__(self, coords, path, meth):
         super().__init__(coords, path + commun.EXT)
         self.imgN = Draw.createImg(path + commun.EXT)               #bouton sans action
         self.imgC = Draw.createImg(path + "C" + commun.EXT)         #bouton cliqué
@@ -17,6 +17,8 @@ class Bouton(Affichable.affichable):
 
         self.cptUpdate = 0
         self.maxCpt = 150
+
+        self.methode = meth
 
     #Renvoie vrai si la position passée en paramètre est dans l'image
     def isHover(self, position):
@@ -51,3 +53,7 @@ class Bouton(Affichable.affichable):
         if self.cptUpdate == self.maxCpt:
             self.setImgN()
             self.cptUpdate = 0
+
+    #Applique la méthode spécifique au bouton
+    def appliqueMethode(self):
+        self.methode(self)
