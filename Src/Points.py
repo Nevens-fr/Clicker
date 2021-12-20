@@ -60,13 +60,26 @@ class Points(Texte.Texte):
                 string += " " +str(self.ordre[indNext].getNB()) + " " + self.ordre[indNext].getIntitule()
         except:
             indNext = None
+
+        textCookieParClick = Texte.Texte(commun.NB_COOKIES_CLICK_COORDS, self.nbCookiesParClick(), self.font, self.color)
         
         self.img = Draw.rendertexte(self.font, string, True, self.color)
+        Draw.drawBlit(screen, textCookieParClick)
         Draw.drawBlit(screen, self)
 
     ##
+    #Retourne une chaine de caractère contenant le nombre de cookies par clicks
+    def nbCookiesParClick(self):
+        string =  string = str(self.ordre[-1].getNBPARCLICK()) + " " + self.ordre[-1].getIntitule()
+
+        if len(self.ordre) > 1:
+            string += " "  +str(self.ordre[-2].getNBPARCLICK()) + " " + self.ordre[-2].getIntitule()
+
+        return string
+
+    ##
     #retourne l'indice du premier espace d'une chaine
-    def getSpace(nb, m):
+    def getSpace(self, nb, m):
         i = 0
         for e in m:
             if e == ' ' and nb == 0:
@@ -88,22 +101,27 @@ class Points(Texte.Texte):
             f = open(commun.PATH + commun.SAVE, "r")
             tmp = f.readlines()
             f.close()
+
+            #arrangement des données
+            tmp = ''.join(tmp)
+            tmp = tmp.split('\n')
+            tmp.pop()
             print(tmp)
+            
 
             commun.UPGRADE.clear()
             #get des valeurs + ordre de grandeurs des upgrades
-            for i in range(1,5):
-                commun.UPGRADE.append([int(tmp[i][0:self.getSpace(tmp[0])]), int(tmp[i][self.getSpace(tmp[0]) + 1 : ])])
+            for i in range(4):
+                commun.UPGRADE.append([int(tmp[i][0:self.getSpace(0,tmp[i])]), int(tmp[i][self.getSpace(0,tmp[i]) + 1 : ])])
 
             #< à 1 000 get des centaines
-            self.ordre.append(OrdreGrandeur.OrdreGrandeur("", int(tmp[1][0:self.getSpace(0,tmp[1])]), int(tmp[i][self.getSpace(0,tmp[i]) + 1 : ])))
+            self.ordre.append(OrdreGrandeur.OrdreGrandeur("", int(tmp[4][0:self.getSpace(0,tmp[4])]), 4, int(tmp[4][self.getSpace(0,tmp[4]) + 1 : ])))
             #> à 1 000
-            i = 6
-            while i < len(tmp) - 1:
+            i = 5
+            while i < len(tmp):
                 self.ordre.append(self.ordre[-1].createGrandeurLoad(int(tmp[i][0 : self.getSpace(0,tmp[i])]), int(tmp[i][self.getSpace(0,tmp[i]) + 1 : ]) ))
                 i+=1
-        except:
-            commun.NB = tmp
+        except: #Problème de sauvegarde inexistante ou corrompue, reset de la partie
             commun.UPGRADE= [
                 [0,1],
                 [0,2],
@@ -112,7 +130,8 @@ class Points(Texte.Texte):
             ]   
             self.ordre.append(OrdreGrandeur.OrdreGrandeur("", tmp, 0, 1))
 
-    #sauvegarde du score
+    ##
+    #sauvegarde de la partie
     def saveScore(self, btns):
         try:
             f = open(commun.PATH + commun.SAVE, "w")
