@@ -18,8 +18,6 @@ FOND = "fond.png"
 SAVE = "save.txt"
 
 POINTS = None
-COOKIE_CLICK_NB = 1 #nombre de cookie généré par un click
-COOKIE_CLICK_NB_ORD_GRAND = 0
 
 UPGRADE = [
     [0,1],

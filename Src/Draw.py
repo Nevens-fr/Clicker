@@ -57,7 +57,7 @@ def drawRect(screen, *arg):
 
 #Retourne une police pour écrire sur l'écran
 def creerFont():
-    return pg.font.SysFont("Comic Sans MS", 30)
+    return pg.font.SysFont("Comic Sans MS", 20)
 
 #retourne la taille d'une image
 #comment récup une valeur Draw.imgSize(image)[0] ou Draw.imgSize(image)[1] pour la hauteur

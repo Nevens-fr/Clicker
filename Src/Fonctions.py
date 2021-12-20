@@ -15,9 +15,9 @@ def createButtonUpgrade():
     return btns
 
 ##
-#ajoute des points au compteurs et met à jour l'affichage
+#ajoute des cookies au compteurs car click sur le cookie recu et met à jour l'affichage
 def addPt(self):
-    commun.POINTS.ajout(commun.COOKIE_CLICK_NB, commun.COOKIE_CLICK_NB_ORD_GRAND)
+    commun.POINTS.ajout()
 
 
 
