@@ -16,7 +16,7 @@ class Bouton(Affichable.affichable):
         self.h = Draw.imgSize(self.img)[1]
 
         self.cptUpdate = 0
-        self.maxCpt = 150
+        self.maxCpt = 50
 
         self.methode = meth
 

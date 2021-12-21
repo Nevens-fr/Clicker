@@ -9,14 +9,14 @@ import sys
 
 #Ecran de jeu
 def jeu(screen):
+    font = Draw.creerFont()
+    commun.POINTS = Points.Points(font)
+    
     btns = Fonctions.createButtonUpgrade()
     btns.append(Bouton.Bouton(commun.COOKIE_COORD, commun.BTNPATH + commun.COOKIE, Fonctions.addPt))
 
     arrierePlan = Affichable.affichable(commun.FOND_COORDS, commun.PATH+ commun.FOND)
-    font = Draw.creerFont()
     click = Click.Click()
-
-    commun.POINTS = Points.Points(font)
 
     while True:
         click.update()

@@ -33,7 +33,7 @@ TXT_UPGRADE = [
     "Poids lourd de l'industrie"
 ]
 
-COEF_UPGRADE = 0.1
+COEF_UPGRADE = 0.25
 
 
 #boutons

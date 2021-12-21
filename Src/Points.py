@@ -105,9 +105,7 @@ class Points(Texte.Texte):
             #arrangement des données
             tmp = ''.join(tmp)
             tmp = tmp.split('\n')
-            tmp.pop()
-            print(tmp)
-            
+            tmp.pop()            
 
             commun.UPGRADE.clear()
             #get des valeurs + ordre de grandeurs des upgrades
@@ -115,7 +113,7 @@ class Points(Texte.Texte):
                 commun.UPGRADE.append([int(tmp[i][0:self.getSpace(0,tmp[i])]), int(tmp[i][self.getSpace(0,tmp[i]) + 1 : ])])
 
             #< à 1 000 get des centaines
-            self.ordre.append(OrdreGrandeur.OrdreGrandeur("", int(tmp[4][0:self.getSpace(0,tmp[4])]), 4, int(tmp[4][self.getSpace(0,tmp[4]) + 1 : ])))
+            self.ordre.append(OrdreGrandeur.OrdreGrandeur("", int(tmp[4][0:self.getSpace(0,tmp[4])]), 0, int(tmp[4][self.getSpace(0,tmp[4]) + 1 : ])))
             #> à 1 000
             i = 5
             while i < len(tmp):

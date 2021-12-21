@@ -57,9 +57,12 @@ class OrdreGrandeur:
     ##
     #retourne l'ordre de grandeur suivant
     def retourneNextGrandeur(self):
-        nb = self.nb - 999
-        self.nb = (1000 - self.nb) * (0-1)
-        self.suiv =  OrdreGrandeur(commun.GRANDEURS[self.indice + 1], nb, self.indice + 1)
+        if self.nb > 0:
+            nb = self.nb - 999
+            self.nb = (1000 - self.nb) * (0-1)
+        else:
+            nb = 0
+        self.suiv =  OrdreGrandeur(commun.GRANDEURS[self.indice + 1], nb, self.indice + 1,0)
         return self.suiv
 
     ##
